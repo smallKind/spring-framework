@@ -33,7 +33,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.util.Assert;
 
 /**
- * Abstract base class for bean definition readers which implement
+ * Abstract base class for bean definition readers(阅读器) which implement
  * the {@link BeanDefinitionReader} interface.
  *
  * <p>Provides common properties like the bean factory to work on
@@ -43,6 +43,7 @@ import org.springframework.util.Assert;
  * @author Chris Beams
  * @since 11.12.2003
  * @see BeanDefinitionReaderUtils
+ * 基本的Bean Definition的阅读器
  */
 public abstract class AbstractBeanDefinitionReader implements EnvironmentCapable, BeanDefinitionReader {
 
@@ -51,13 +52,13 @@ public abstract class AbstractBeanDefinitionReader implements EnvironmentCapable
 
 	private final BeanDefinitionRegistry registry;
 
-	private ResourceLoader resourceLoader;
+	private ResourceLoader resourceLoader;//资源加载器
 
-	private ClassLoader beanClassLoader;
+	private ClassLoader beanClassLoader;//类加载器
 
-	private Environment environment;
+	private Environment environment;//环境
 
-	private BeanNameGenerator beanNameGenerator = new DefaultBeanNameGenerator();
+	private BeanNameGenerator beanNameGenerator = new DefaultBeanNameGenerator();//BeanName生成器
 
 
 	/**

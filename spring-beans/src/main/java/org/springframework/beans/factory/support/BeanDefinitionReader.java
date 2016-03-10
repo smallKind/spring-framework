@@ -35,6 +35,7 @@ import org.springframework.core.io.ResourceLoader;
  * @author Juergen Hoeller
  * @since 1.1
  * @see org.springframework.core.io.Resource
+ * 提供标准的解析器方法
  */
 public interface BeanDefinitionReader {
 
@@ -73,14 +74,15 @@ public interface BeanDefinitionReader {
 	ClassLoader getBeanClassLoader();
 
 	/**
-	 * Return the BeanNameGenerator to use for anonymous beans
+	 * Return the BeanNameGenerator to use for anonymous(匿名) beans
 	 * (without explicit bean name specified).
+	 * 返回匿名bean
 	 */
 	BeanNameGenerator getBeanNameGenerator();
 
 
 	/**
-	 * Load bean definitions from the specified resource.
+	 * Load bean definitions from the specified(指定的) resource.
 	 * @param resource the resource descriptor
 	 * @return the number of bean definitions found
 	 * @throws BeanDefinitionStoreException in case of loading or parsing errors

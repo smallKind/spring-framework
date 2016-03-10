@@ -104,6 +104,7 @@ import org.springframework.core.ResolvableType;
  * @see org.springframework.beans.factory.config.BeanPostProcessor#postProcessAfterInitialization
  * @see DisposableBean#destroy
  * @see org.springframework.beans.factory.support.RootBeanDefinition#getDestroyMethodName
+ * 体现了spring为提供给用户使用的IOC容器最基本的功能规范
  */
 public interface BeanFactory {
 
@@ -112,6 +113,8 @@ public interface BeanFactory {
 	 * beans <i>created</i> by the FactoryBean. For example, if the bean named
 	 * {@code myJndiObject} is a FactoryBean, getting {@code &myJndiObject}
 	 * will return the factory, not the instance returned by the factory.
+	 * 如果myJndiObject是一个FactoryBean,那么使用&myJndiObject得到的是FactoryBean,
+	 * 而不是myJndiObject这个FactoryBean产生的对象
 	 */
 	String FACTORY_BEAN_PREFIX = "&";
 
@@ -255,6 +258,7 @@ public interface BeanFactory {
 	 * @since 2.0.3
 	 * @see #getBean
 	 * @see #isSingleton
+	 * 原型模式:用原型模式是在已指定对象的基础上，然后通过拷贝这些原型对象创建新的对象。
 	 */
 	boolean isPrototype(String name) throws NoSuchBeanDefinitionException;
 

@@ -23,11 +23,11 @@ import org.springframework.core.io.Resource;
 
 /**
  * Standalone XML application context, taking the context definition files
- * from the file system or from URLs, interpreting plain paths as relative
+ * from the file system or from URLs, interpreting(解释) plain paths as relative
  * file system locations (e.g. "mydir/myfile.txt"). Useful for test harnesses
  * as well as for standalone environments.
  *
- * <p><b>NOTE:</b> Plain paths will always be interpreted as relative
+ * <p><b>NOTE:</b> Plain paths will always be interpreted as relative(相对的)
  * to the current VM working directory, even if they start with a slash.
  * (This is consistent with the semantics in a Servlet container.)
  * <b>Use an explicit "file:" prefix to enforce an absolute file path.</b>
