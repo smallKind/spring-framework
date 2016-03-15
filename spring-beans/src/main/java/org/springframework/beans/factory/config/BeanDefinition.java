@@ -35,6 +35,9 @@ import org.springframework.core.AttributeAccessor;
  * @see ConfigurableListableBeanFactory#getBeanDefinition
  * @see org.springframework.beans.factory.support.RootBeanDefinition
  * @see org.springframework.beans.factory.support.ChildBeanDefinition
+ * 一个BeanDefinition描述了一个bean的实例，包括属性值，构造方法参数值和继承自它的类的更多信息。
+ * BeanDefinition仅仅是一个最简单的接口，主要功能是允许BeanFactoryPostProcessor
+ * 例如PropertyPlaceHolderConfigure 能够检索并修改属性值和别的bean的元数据。
  */
 public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 

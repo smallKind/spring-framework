@@ -130,6 +130,8 @@ public class FileSystemXmlApplicationContext extends AbstractXmlApplicationConte
 	 * @param parent the parent context
 	 * @throws BeansException if context creation failed
 	 * @see #refresh()
+	 * 在对象的初始化过程中,调用refresh()函数载入BeanDefinition,这个refresh()启动了BeanDefinition
+	 * 的载入过程
 	 */
 	public FileSystemXmlApplicationContext(String[] configLocations, boolean refresh, ApplicationContext parent)
 			throws BeansException {
@@ -150,6 +152,9 @@ public class FileSystemXmlApplicationContext extends AbstractXmlApplicationConte
 	 * @param path path to the resource
 	 * @return Resource handle
 	 * @see org.springframework.web.context.support.XmlWebApplicationContext#getResourceByPath
+	 * 这是应用文件系统中Resource的实现,通过构造一个FileSystemResource来得到一个在文件系统中定位的BeanDefinition
+	 * 这个getReSourceByPath是在BeanDefinitionReader的loadBeanDefinition中调用
+	 * loadBeanDefinition采用的是模板模式,具体的定位实现实际上是各个子类来完成的
 	 */
 	@Override
 	protected Resource getResourceByPath(String path) {
@@ -158,5 +163,9 @@ public class FileSystemXmlApplicationContext extends AbstractXmlApplicationConte
 		}
 		return new FileSystemResource(path);
 	}
+
+	/**
+	 * 模板方法:定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。 T模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤
+	 */
 
 }

@@ -39,6 +39,7 @@ import org.springframework.beans.factory.FactoryBeanNotInitializedException;
  *
  * @author Juergen Hoeller
  * @since 2.5.1
+ * 添加对FactoryBean的支持,就是使用工厂方法初始化类.
  */
 public abstract class FactoryBeanRegistrySupport extends DefaultSingletonBeanRegistry {
 
@@ -138,7 +139,7 @@ public abstract class FactoryBeanRegistrySupport extends DefaultSingletonBeanReg
 	}
 
 	/**
-	 * Obtain an object to expose from the given FactoryBean.
+	 * Obtain an object to expose(显示) from the given FactoryBean.
 	 * @param factory the FactoryBean instance
 	 * @param beanName the name of the bean
 	 * @return the object obtained from the FactoryBean

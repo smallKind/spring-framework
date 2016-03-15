@@ -34,6 +34,7 @@ import org.springframework.util.StringValueResolver;
  *
  * @author Juergen Hoeller
  * @since 2.5.2
+ * AliasRegistry实现类
  */
 public class SimpleAliasRegistry implements AliasRegistry {
 
@@ -74,7 +75,7 @@ public class SimpleAliasRegistry implements AliasRegistry {
 	}
 
 	/**
-	 * Determine whether the given name has the given alias registered.
+	 * Determine(确定) whether the given name has the given alias registered.
 	 * @param name the name to check
 	 * @param alias the alias to look for
 	 * @since 4.2.1
@@ -113,7 +114,7 @@ public class SimpleAliasRegistry implements AliasRegistry {
 	}
 
 	/**
-	 * Transitively retrieve all aliases for the given name.
+	 * Transitively retrieve(检索,取回) all aliases for the given name.
 	 * @param name the target name to find aliases for
 	 * @param result the resulting aliases list
 	 */
@@ -129,11 +130,12 @@ public class SimpleAliasRegistry implements AliasRegistry {
 	}
 
 	/**
-	 * Resolve all alias target names and aliases registered in this
+	 * Resolve(解决) all alias target names and aliases registered in this
 	 * factory, applying the given StringValueResolver to them.
 	 * <p>The value resolver may for example resolve placeholders
 	 * in target bean names and even in alias names.
 	 * @param valueResolver the StringValueResolver to apply
+	 * 批量校验别名
 	 */
 	public void resolveAliases(StringValueResolver valueResolver) {
 		Assert.notNull(valueResolver, "StringValueResolver must not be null");
@@ -191,6 +193,7 @@ public class SimpleAliasRegistry implements AliasRegistry {
 	 * Determine the raw name, resolving aliases to canonical names.
 	 * @param name the user-specified name
 	 * @return the transformed name
+	 * 查找别名对应的原始类名
 	 */
 	public String canonicalName(String name) {
 		String canonicalName = name;

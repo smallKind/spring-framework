@@ -121,7 +121,7 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, Single
 	void setCacheBeanMetadata(boolean cacheBeanMetadata);
 
 	/**
-	 * Return whether to cache bean metadata such as given bean definitions
+	 * Return whether to cache bean metadata(元数据) such as given bean definitions
 	 * (in merged fashion) and resolved bean classes.
 	 */
 	boolean isCacheBeanMetadata();
@@ -136,20 +136,20 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, Single
 	void setBeanExpressionResolver(BeanExpressionResolver resolver);
 
 	/**
-	 * Return the resolution strategy for expressions in bean definition values.
+	 * Return the resolution(解决) strategy(策略) for expressions(表达式,公式) in bean definition values.
 	 * @since 3.0
 	 */
 	BeanExpressionResolver getBeanExpressionResolver();
 
 	/**
-	 * Specify a Spring 3.0 ConversionService to use for converting
+	 * Specify a Spring 3.0 ConversionService to use for converting(转换)
 	 * property values, as an alternative to JavaBeans PropertyEditors.
 	 * @since 3.0
 	 */
 	void setConversionService(ConversionService conversionService);
 
 	/**
-	 * Return the associated ConversionService, if any.
+	 * Return the associated(关联) ConversionService, if any.
 	 * @since 3.0
 	 */
 	ConversionService getConversionService();
@@ -195,7 +195,7 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, Single
 	void setTypeConverter(TypeConverter typeConverter);
 
 	/**
-	 * Obtain a type converter as used by this BeanFactory. This may be a fresh
+	 * Obtain a type converter(转化器) as used by this BeanFactory. This may be a fresh
 	 * instance for each call, since TypeConverters are usually <i>not</i> thread-safe.
 	 * <p>If the default PropertyEditor mechanism is active, the returned
 	 * TypeConverter will be aware of all custom editors that have been registered.

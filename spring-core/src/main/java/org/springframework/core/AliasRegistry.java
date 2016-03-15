@@ -22,6 +22,7 @@ package org.springframework.core;
  *
  * @author Juergen Hoeller
  * @since 2.5.2
+ * 公共的接口管理别名,提供注册,删除,判断,获取功能
  */
 public interface AliasRegistry {
 

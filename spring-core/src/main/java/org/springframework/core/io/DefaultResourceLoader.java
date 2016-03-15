@@ -101,7 +101,7 @@ public class DefaultResourceLoader implements ResourceLoader {
 				return new UrlResource(url);
 			}
 			catch (MalformedURLException ex) {
-				// No URL -> resolve as resource path.
+				// No URL -> resolve as resource path.这个方法常常用子类的方法(覆盖)
 				return getResourceByPath(location);
 			}
 		}
